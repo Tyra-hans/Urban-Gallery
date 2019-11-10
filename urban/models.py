@@ -1,4 +1,5 @@
 from django.db import models
+import datetime as dt
 
 class Editor(models.Model):
     first_name = models.CharField(max_length =30)
@@ -10,6 +11,9 @@ class Editor(models.Model):
 
     class Meta:
         ordering = ['first_name']
+
+    def save_editor(self):
+        self.save()
 
 class Location(models.Model):
     name = models.CharField(max_length =30)
@@ -33,3 +37,14 @@ class Article(models.Model):
     tags = models.ManyToManyField(tags)
     location = models.ForeignKey(Location)
     pub_date = models.DateTimeField(auto_now_add=True)
+
+    @classmethod
+    def todays_photos(cls):
+        today = dt.date.today()
+        image = cls.objects.filter(pub_date__date = today)
+        return image
+
+    @classmethod
+    def days_photos(cls,date):
+        images = cls.objects.filter(pub_date__date = date)
+        return images
