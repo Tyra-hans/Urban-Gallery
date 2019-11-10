@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>Urban gallery - {{title}}</title>
+  {% else %}
+    <title> Urban gallery </title>
+  {% endif %}
+
+</head>
+<body>
+    {% block content %} <h1>News for {{date|date:"l d-F Y"}}</h1> {%endblock%}
+    {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ {% bootstrap_javascript %}
+{% endblock %}
+</body>
+</html>
