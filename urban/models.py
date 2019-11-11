@@ -1,6 +1,4 @@
 from django.db import models
-# # import pyperclip
-# # from django.conf import setting
 import datetime as dt
 
 class Editor(models.Model):
@@ -17,11 +15,8 @@ class Editor(models.Model):
     def save_editor(self):
         self.save()
 
-class Location(models.Model):
-#     class Location(models.Model):
-       
+class Location(models.Model):       
     location = models.CharField(max_length=20)
-
     @classmethod
     def find_location(cls,location):
         location = cls.objects.filter(location = location).all()
