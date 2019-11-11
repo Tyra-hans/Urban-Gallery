@@ -44,7 +44,7 @@ class Category(models.Model):
     
     @classmethod
     def find_category_id(cls,category):
-        category = cls.objects.filter(category=category)
+        category = cls.objects.filter(category=category).all()
         return category
 
     def __str__(self):
@@ -79,8 +79,11 @@ class Article(models.Model):
     
     @classmethod
     def search_image(cls,category):
-        images = cls.objects.filter(category = category)
-        return images
+        cat_image = []
+        for item in category:
+            images = cls.objects.filter(category_id = item.id)
+            cat_image.append(images)
+        return cat_image
 
     @classmethod
     def filter_by_location(cls,location):

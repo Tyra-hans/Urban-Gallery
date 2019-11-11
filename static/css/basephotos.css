@@ -3,6 +3,7 @@
   padding: 0;
   font-family: "montserrat",sans-serif;
   box-sizing: border-box;
+  overflow: unset;
 }
 
 .gallery-section{
@@ -43,16 +44,17 @@
   cursor: pointer;
 }
 
-.gallery-section .image img{
-  width: 100%;
-  /* height: 100%; */
-  transition: 0.4s;
-}
+
 
 .gallery-section .image:hover img{
   transform: scale(1.2) rotate(5deg);
 }
-
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+  text-align: center;
+  font-size: 30px;
+}
 @media screen and (max-width:960px) {
   .gallery-section .image{
     flex: 33.33%;
@@ -69,4 +71,11 @@
   .gallery-section .image{
     flex: 100%;
   }
+}
+#images{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }

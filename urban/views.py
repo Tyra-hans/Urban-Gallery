@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http  import HttpResponse,Http404
 import datetime as dt
-from . models import Article
+from . models import Article, Category
 from django.http  import HttpResponse
 
 # Create your views here.
@@ -43,7 +43,9 @@ def search(request):
     if 'search' in request.GET and request.GET['search']:
         search_term = request.GET.get('search').lower()
         category = Category.find_category_id(search_term)
-        searched_images = Image.search_image(category)
+        searched_images = Article.search_image(category)
+        
+
         message = f"{search_term}" 
 
 
