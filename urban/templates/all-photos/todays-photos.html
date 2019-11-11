@@ -1,7 +1,7 @@
 {%extends 'all-photos/base.html'%}
 {% block content %} 
 {{ block.super}}
-<h1 style="text-align: center;font-family: 'ZCOOL KuaiLe', cursive;border-color: aliceblue; border-bottom-right-radius: 5px;">Urban Gallery</h1>
+<h1 style="text-align: center;font-family: 'ZCOOL KuaiLe', cursive;border-color: aliceblue; border-bottom-right-radius: 5px; font-size: 40px;" class='wow bounceInDown'>Urban Gallery</h1>
 <div class="border"></div>
 <div class="container">
     <div class="row">
@@ -10,14 +10,14 @@
             <div class="mdb-lightbox no-margin" id="image-area">
                 {% for image_item in image %}
                 <figure class="col-md-4">
-                    <img src="{{image_item.image.url}}" data-toggle="modal" data-target="#detailModal{{image_item.pk}}" style="height: 300px; width:350px;margin: 20px;">
+                    <img class= "wow slideInUp" src="{{image_item.image.url}}" data-toggle="modal" data-target="#detailModal{{image_item.pk}}" style="height: 400px; width:350px;margin: 20px;">
                 </figure>
                 <!-- Modal -->
                 <div class="modal fade" id="detailModal{{image_item.pk}}" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                      <img class="wow slideInDown img-responsive" src="{{image_item.image.url}}"  alt="Image"style="height: 400px; width:450px;margin: 20px;">
+                                      <img class="wow slideInDown img-responsive" src="{{image_item.image.url}}"  alt="Image"style="height: 400px; width:450px;margin: 10px;">
                                       
                                       <h2 class="modal-title"> {{ image_item.title }} </h2>
                                       
