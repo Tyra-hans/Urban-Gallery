@@ -17,7 +17,8 @@ No known bugs.
 | ------------------|:--------------------:| ---------------------------:|
 | hover             |image zooms           | zoom on hover               |
 | click             |displays modal        |revealvs info                |
-| searh form        |Key in details        |searches for imag            |
+| searh form        |Key in details        |searches for image           |
+| back button       |click button          |navigates to home page       |
 
 
 ## Technologies
