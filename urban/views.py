@@ -39,15 +39,15 @@ def past_days_photos(request,past_date):
                 '''
         return HttpResponse(html)
 
-def search_results(request):
+def search(request):
+    if 'search' in request.GET and request.GET['search']:
+        search_term = request.GET.get('search').lower()
+        category = Category.find_category_id(search_term)
+        searched_images = Image.search_image(category)
+        message = f"{search_term}" 
 
-    if 'article' in request.GET and request.GET["article"]:
-        search_term = request.GET.get("article")
-        searched_articles = Article.search_by_title(search_term)
-        message = f"{search_term}"
 
-        return render(request, 'all-photos/search.html',{"message":message,"articles": searched_articles})
-
+        return render(request, 'search.html',{"message":message, "images":searched_images})
     else:
-        message = "You haven't searched for any term"
-        return render(request, 'all-photos/search.html',{"message":message})    
+        message = "No results."
+        return render(request, 'search.html',{"message":message})

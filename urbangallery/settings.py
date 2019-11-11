@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'urbangallery.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'urbangallery',
+        'NAME': 'urb',
         'USER': 'tyra',
     'PASSWORD':'password',
     }
