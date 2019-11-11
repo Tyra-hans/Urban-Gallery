@@ -10,13 +10,14 @@
           <div class="gallery">
           <div class="row">
               {% for image_item in image %}
-              <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                <img class="wow slideInDown img-responsive" src="{{image_item.image.url}}"  alt="Image" width="300" height="400" data-toggle="modal" data-target="#detailModal">
+              <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 " data-toggle="modal" data-target="#detailModal{{image_item.pk}}">
+                <img class="wow slideInDown img-responsive" src="{{image_item.image.url}}"  alt="Image" width="300" height="400">
                   
               </div>
 
           </div>
-          <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+          
+          <div class="modal fade" id="detailModal{{image_item.pk}}" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                   <div class="modal-content">
                       <div class="modal-body">
