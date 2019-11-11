@@ -4,8 +4,11 @@
   font-family: "montserrat",sans-serif;
   box-sizing: border-box;
   overflow: unset;
+  
 }
-
+.ee{
+  color: black;
+}
 .gallery-section{
   width: 100%;
   padding: 60px 0;
