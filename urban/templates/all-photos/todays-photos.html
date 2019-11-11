@@ -17,16 +17,21 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                      <img class="wow slideInDown img-responsive" src="{{image_item.image.url}}"  alt="Image" width="300" height="400" >
-                                    
-                                    <h2 class="modal-title"> {{ image_item.title }} </h2>
-                                    
-                                    <p class="modal-body"> author: {{ image_item.editor }} </p>
-                                    <p class="modal-body"> category: {{ image_item.category }} <p>
+                                      <img class="wow slideInDown img-responsive" src="{{image_item.image.url}}"  alt="Image"style="height: 400px; width:450px;margin: 20px;">
+                                      
+                                      <h2 class="modal-title"> {{ image_item.title }} </h2>
+                                      
+                                      <p class="modal-body"> author: {{ image_item.editor }} </p>
+                                      <p class="modal-body"> category: {{ image_item.category }} <p>
+                                      <p class="modal-body"> {{ image_item.description }} <p>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                               
-                                    
+                                        </div>
+                                        
+                                        
+                                        <button type="button" class="btn btn-secondary" onclick="CopyFunction()">Copy url 
+                             
+                                        <input type="text" id="myInput" value="{{image_item.image.url}}">
+                                        </button>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>       
