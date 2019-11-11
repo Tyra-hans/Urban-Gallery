@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http  import HttpResponse,Http404
 import datetime as dt
+from . models import Article
 from django.http  import HttpResponse
 
 # Create your views here.
-def photos_today(request):
+def welcome(request):
     date = dt.date.today()
     image = Article.todays_photos()
     return render(request, 'all-photos/todays-photos.html', {"date": date,"image":image})

@@ -32,7 +32,7 @@ class tags(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length =60)
-    post = models.TextField()
+    image = models.ImageField(upload_to = 'photos/' , default='SOME STRING')
     editor = models.ForeignKey(Editor)
     tags = models.ManyToManyField(tags)
     location = models.ForeignKey(Location)

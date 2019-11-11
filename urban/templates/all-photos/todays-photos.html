@@ -1,0 +1,61 @@
+{%extends 'all-photos/base.html'%}
+{% block content %} 
+{{ block.super}}
+
+<div class="container">
+    <div class="gallery-section">
+        <div class="inner-width">
+          <h1 class="wow bounce">The Urban Gallery</h1>
+          <div class="border"></div>
+          <div class="gallery">
+          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+
+  <!-- Looping through images   -->
+  {% for image_item in image %}
+  <img class="wow slideInDown img-responsive" src="{{image_item.image.url}}"  alt="Image" width="300" height="200" data-toggle="modal" data-target="#detailModal">
+    </div>
+
+  <!-- <div class="row"> -->
+    <!-- displaying News articles -->
+    <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> -->
+      <!-- <h2 class="text-center"> {{ image_item.title }} </h2> -->
+    <!-- </div> -->
+    <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> -->
+        <!-- <img src="{{image_item.image.url}}" class="img-responsive" alt="Image"> -->
+      <!-- </div> -->
+      <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-body">
+                      
+                      <h2 class="modal-title"> {{ image_item.title }} </h2>
+                      <p class="modal-body"> author: {{ image_item.editor }} </p>
+                      <p class="modal-body"> category: {{ image_item.tags }} <p>
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                 
+                      
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                
+                  
+                  
+              </div>
+              
+            
+          </div>
+             
+          <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <h2 class="text-center"> {{ image_item.name }} </h2>
+          </div>
+           -->
+        </div>
+  </div>
+
+
+  {% endfor %}
+
+</div>
+
+{% endblock %}
